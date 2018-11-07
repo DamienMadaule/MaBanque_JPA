@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<Appenders>
+
+		<!-- Console Appender -->
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="%d{yyyy-MMM-dd HH:mm:ss a} [%t] %-5level %logger{36} - %msg%n" />
+		</Console>
+
+		<!-- Rolling File Appender -->
+		<RollingFile name="RollingFile">
+			<FileName>C:/DEV/Log/mylog.log</FileName>
+			<FilePattern>C:/DEV/Log/time-based-logs/%d{yyyy-MM-dd-hh-mm}.log.zip
+			</FilePattern>
+			<PatternLayout>
+				<Pattern>%d{yyyy-MMM-dd HH:mm:ss a} [%t] %-5level %logger{36} -
+					%msg%n</Pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="10"
+					modulate="true" />
+			</Policies>
+			<DefaultRolloverStrategy max="5" />
+		</RollingFile>
+
+	</Appenders>
+	<Loggers>
+		<Root level="trace" name="fr.ynov">
+			<AppenderRef ref="Console" />
+		</Root>
+		<Logger name="fr.ynov" level="trace" additivity="true">
+			<AppenderRef ref="RollingFile" />
+		</Logger>
+	</Loggers>
+</Configuration>

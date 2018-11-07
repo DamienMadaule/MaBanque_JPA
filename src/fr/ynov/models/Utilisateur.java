@@ -13,7 +13,7 @@ import javax.persistence.Table;
 import javax.persistence.CascadeType;
 
 @Entity
-@Table(name="utilisateur")
+@Table(name = "utilisateur")
 public class Utilisateur {
 	private int id;
 	private String nom;
@@ -25,14 +25,14 @@ public class Utilisateur {
 	private String telephone;
 	private Date dateDeNaissance;
 	private String adresse;
-	@OneToMany (mappedBy="user",cascade=CascadeType.ALL)
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	private List<Compte> comptes;
-	
+
 	public Utilisateur() {
-		
+
 	}
-	
-	public Utilisateur(String nom, String prenom, String email, String login,String password, String telephone,
+
+	public Utilisateur(String nom, String prenom, String email, String login, String password, String telephone,
 			Date dateDeNaissance, String adresse) {
 		super();
 		this.nom = nom;
@@ -43,6 +43,7 @@ public class Utilisateur {
 		this.telephone = telephone;
 		this.dateDeNaissance = dateDeNaissance;
 		this.adresse = adresse;
+		this.comptes = null;
 	}
 
 	public String getNom() {
@@ -108,7 +109,7 @@ public class Utilisateur {
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
 	}
-	
+
 	public List<Compte> getComptes() {
 		return comptes;
 	}
@@ -117,7 +118,8 @@ public class Utilisateur {
 		this.comptes = comptes;
 	}
 
-	public void addCompte (Compte compte) {
+	public void addCompte(Compte compte) {
+
 		this.comptes.add(compte);
 	}
 

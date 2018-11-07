@@ -9,6 +9,6 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>Servlet de connexion</servlet-name>
-        <url-pattern>/Login</url-pattern>
+        <url-pattern>/login</url-pattern>
     </servlet-mapping>
 </web-app>

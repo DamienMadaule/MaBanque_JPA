@@ -9,23 +9,37 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import fr.ynov.manager.UtilisateurManager;
-import fr.ynov.models.Utilisateur;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import fr.ynov.manager.CompteManager;
+import fr.ynov.models.Compte;
 
 @SuppressWarnings("serial")
-@WebServlet("/CompteClient")
+@WebServlet("/private/compteClient")
 public class CompteClient extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/CompteClient.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/compteClient.jsp");
 		dispatcher.forward(req, resp);
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String idCompte = req.getParameter("submitButton");
-		resp.sendRedirect(req.getContextPath() + "/Transaction.jsp");
+		Logger logger = LogManager.getLogger(CompteClient.class);
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/CompteClient.jsp");
+		int idCompte = Integer.parseInt(req.getParameter("id"));
+		Compte cpt = CompteManager.loadCompteByid(idCompte);
+		if(cpt==null) {
+			req.setAttribute("errorMessage", "Aucun utilisateur connu avec ce mot de passe");
+			dispatcher.forward(req, resp);
+			logger.debug("aucun Compte avec cette ID");
+		}else {
+			req.getSession().setAttribute("Compte", cpt);
+			resp.sendRedirect(req.getContextPath() + "/private/transaction");
+		}
+		
 		
 	}
 	
