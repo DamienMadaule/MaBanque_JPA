@@ -29,9 +29,9 @@ public class AjouterCompte extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Logger logger = LogManager.getLogger(CompteClient.class);
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/CompteClient.jsp");
-		Compte compte = new Compte(0, new Date());
-		Utilisateur uti = (Utilisateur) req.getSession().getAttribute("utilissateur");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/compteClient.jsp");
+		Compte compte = new Compte(0f, new Date());
+		Utilisateur uti = (Utilisateur) req.getSession().getAttribute("utilisateur");
 		uti.addCompte(compte);
 		CompteManager.saveCompte(compte);
 		UtilisateurManager.updateClient(uti);
