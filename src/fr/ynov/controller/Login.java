@@ -38,7 +38,7 @@ public class Login extends HttpServlet {
 			logger.debug("champs login non rempli");
 
 		} else if (password == null || password.length() == 0) {
-			req.setAttribute("errorMessage", "Le champs Password est obligatoire");
+			req.setAttribute("errorMessage", "Le champs PasswordHelper est obligatoire");
 			dispatcher.forward(req, resp);
 			logger.debug("champs password non rempli");
 		} else {
@@ -50,6 +50,7 @@ public class Login extends HttpServlet {
 			} else {
 				req.getSession().setAttribute("utilisateur", uti);
 				resp.sendRedirect(req.getContextPath() + "/private/compteClient");
+				req.getSession().setMaxInactiveInterval(120);
 				logger.info("Connexion de l'utilisateur reussi : " + uti.getLogin());
 			}
 		}

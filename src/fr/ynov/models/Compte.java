@@ -17,6 +17,13 @@ public class Compte {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	private float solde;
+	private Date dateCreation;
+	@OneToMany (mappedBy="compte", fetch= FetchType.EAGER)
+	private List<Transaction> transaction;
+	@ManyToOne
+	private Utilisateur user;
+	
 	public int getId() {
 		return id;
 	}
@@ -32,23 +39,14 @@ public class Compte {
 	public void setUser(Utilisateur user) {
 		this.user = user;
 	}
-
-	private float solde;
-	private Date dateCreation;
-	@OneToMany (mappedBy="compte", fetch= FetchType.EAGER)
-	private List<Transaction> transaction;
-	@ManyToOne
-	private Utilisateur user;
-	
 	public Compte() {
 		
 	}
 	
-	public Compte(float solde, Date dateCreation,List<Transaction> transaction) {
+	public Compte(float solde, Date dateCreation) {
 		super();
 		this.solde = solde;
 		this.dateCreation = dateCreation;
-		this.transaction = transaction;
 	}
 
 

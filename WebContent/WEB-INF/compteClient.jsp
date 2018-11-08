@@ -25,10 +25,9 @@
 								<td><c:out value="${compte.id}"></c:out></td>
 								<td><c:out value="${compte.solde}"></c:out></td>
 								<td>
-									<form method="post" action="compteClient">
-										<input type="hidden" value="${compte.id}" name="id"> <input
-											type="submit" value="Consulter" class="btn btn-primary"
-											name="submitButton" />
+									<form action="compteClient" method="post">
+										<input type="hidden" value="${compte.id}" name="id"> 
+										<input type="submit" value="Consulter" class="btn btn-primary" name="submitButton" />
 									</form>
 								</td>
 							</tr>
@@ -36,6 +35,9 @@
 					</c:if>
 				</tbody>
 			</table>
+			<div class=" col align-self-end col-md-4">
+				<a href="${pageContext.request.contextPath}/private/ajouterCompte"><button class="btn btn-success btn-block"> Ajouter un compte</button></a>
+			</div>
 		</div>
 	</div>
 </body>

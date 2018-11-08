@@ -26,10 +26,10 @@
 
 	</Appenders>
 	<Loggers>
-		<Root level="trace" name="fr.ynov">
+		<Root level="debug" name="fr.ynov">
 			<AppenderRef ref="Console" />
 		</Root>
-		<Logger name="fr.ynov" level="trace" additivity="true">
+		<Logger name="fr.ynov" level="info" additivity="true">
 			<AppenderRef ref="RollingFile" />
 		</Logger>
 	</Loggers>

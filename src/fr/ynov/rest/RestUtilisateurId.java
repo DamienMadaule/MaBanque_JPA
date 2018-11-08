@@ -32,7 +32,7 @@ public class RestUtilisateurId extends HttpServlet {
         json.put("prenom", uti.getPrenom());
         json.put("email", uti.getEmail());
         json.put("login", uti.getLogin());
-        json.put("Password", uti.getPassword());
+        json.put("PasswordHelper", uti.getPassword());
         json.put("telephone", uti.getTelephone());
         json.put("dateDeNaissance", uti.getDateDeNaissance());
         json.put("adresse", uti.getAdresse());

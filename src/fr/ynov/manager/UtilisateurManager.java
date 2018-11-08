@@ -33,6 +33,13 @@ public class UtilisateurManager extends BaseManager {
 		
 
 	}
+	public static void updateClient(Utilisateur utilisateur) {
+		EntityManager em = getEntityManager();
+		em.getTransaction().begin();
+		em.merge(utilisateur);
+		em.getTransaction().commit();
+		
+	}
 	public static void purgeTable() {
 		EntityManager em = getEntityManager();
 		em.getTransaction().begin();
