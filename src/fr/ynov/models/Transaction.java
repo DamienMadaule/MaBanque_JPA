@@ -21,14 +21,13 @@ public class Transaction {
 	private String libelle;
 	@ManyToOne
 	private Compte compte;
-	
+
 	public Transaction() {
 		
 	}
 	
-	public Transaction(int id, float montant, String cptSource, String cptDestination, Date date, String libelle) {
+	public Transaction(float montant, String cptSource, String cptDestination, Date date, String libelle) {
 		super();
-		this.id = id;
 		this.montant = montant;
 		this.cptSource = cptSource;
 		this.cptDestination = cptDestination;
@@ -84,5 +83,12 @@ public class Transaction {
 		this.libelle = libelle;
 	}
 	
+	public Compte getCompte() {
+		return compte;
+	}
+
+	public void setCompte(Compte compte) {
+		this.compte = compte;
+	}
 	
 }

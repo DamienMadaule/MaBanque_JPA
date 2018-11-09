@@ -1,5 +1,4 @@
 fr\ynov\filter\ConnectionFilter.class
-fr\ynov\function\Password.class
 fr\ynov\models\Utilisateur.class
 fr\ynov\rest\RestUtilisateurId.class
 fr\ynov\models\TypeCpt.class

@@ -47,6 +47,7 @@
 					</c:forEach>
 				</tbody>
 			</table>
+			<a href="${pageContext.request.contextPath}/private/ajouterTransaction"><button class="btn btn-block btn-success">Ajouter une transaction</button></a>
 		</div>
 	</div>
 </body>

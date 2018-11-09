@@ -4,6 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
 import fr.ynov.models.Compte;
+import fr.ynov.models.Utilisateur;
 
 public class CompteManager extends BaseManager {
 	public static void saveCompte(Compte compte) {
@@ -17,6 +18,12 @@ public class CompteManager extends BaseManager {
 		EntityManager em = getEntityManager();
 		Compte compte = em.find(Compte.class, compteId);
 		return compte;
+	}
+	public static void updateCompte(Compte compte) {
+		EntityManager em = getEntityManager();
+		em.getTransaction().begin();
+		em.merge(compte);
+		em.getTransaction().commit();	
 	}
 	
 	public static void purgeTable() {

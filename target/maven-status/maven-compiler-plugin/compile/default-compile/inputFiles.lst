@@ -1,4 +1,5 @@
 D:\Utilisateurs\Utilisateur\eclipse-workspace\MaBanque_JPA\src\fr\ynov\controller\Password.java
+D:\Utilisateurs\Utilisateur\eclipse-workspace\MaBanque_JPA\src\fr\ynov\function\PasswordHelper.java
 D:\Utilisateurs\Utilisateur\eclipse-workspace\MaBanque_JPA\src\fr\ynov\filter\ConnectionFilter.java
 D:\Utilisateurs\Utilisateur\eclipse-workspace\MaBanque_JPA\src\fr\ynov\manager\UtilisateurManager.java
 D:\Utilisateurs\Utilisateur\eclipse-workspace\MaBanque_JPA\src\fr\ynov\controller\Login.java
@@ -9,6 +10,7 @@ D:\Utilisateurs\Utilisateur\eclipse-workspace\MaBanque_JPA\src\fr\ynov\manager\C
 D:\Utilisateurs\Utilisateur\eclipse-workspace\MaBanque_JPA\src\fr\ynov\manager\BaseManager.java
 D:\Utilisateurs\Utilisateur\eclipse-workspace\MaBanque_JPA\src\fr\ynov\models\Utilisateur.java
 D:\Utilisateurs\Utilisateur\eclipse-workspace\MaBanque_JPA\src\fr\ynov\models\TypeCpt.java
-D:\Utilisateurs\Utilisateur\eclipse-workspace\MaBanque_JPA\src\fr\ynov\function\Password.java
+D:\Utilisateurs\Utilisateur\eclipse-workspace\MaBanque_JPA\src\fr\ynov\controller\AjouterCompte.java
+D:\Utilisateurs\Utilisateur\eclipse-workspace\MaBanque_JPA\src\fr\ynov\controller\Transaction.java
 D:\Utilisateurs\Utilisateur\eclipse-workspace\MaBanque_JPA\src\fr\ynov\rest\RestUtilisateurId.java
 D:\Utilisateurs\Utilisateur\eclipse-workspace\MaBanque_JPA\src\fr\ynov\rest\RestSolde.java

@@ -3,16 +3,16 @@
 	<%@include file="navBar.jsp"%>
 	<div class="container">
 		<form action="ajouterCompte" method="post">
-			<div>
+			<div class="form-group">
 				<label for="nomCompte">Nom du Compte :</label>
-				<input type="text" name="nomCompte" id="nomCompte">
+				<input type="text" name="nomCompte" id="nomCompte" class="form-control">
 			</div>
-			<div>
+			<div class="form-group">
 				<label>Type de Compte :</label>
-				<input type="text" name="typeCompte" id="typeCompte">
+				<input type="text" name="typeCompte" id="typeCompte" class="form-control">
 			</div>
-			<div>
-				<button class="btn btn-succes btn-block" type="submit"></button>
+			<div class="col-md-4">
+				<button class="btn btn-success btn-block" type="submit">envoyer</button>
 			</div>
 		</form>
 	</div>

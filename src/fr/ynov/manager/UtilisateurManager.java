@@ -37,8 +37,7 @@ public class UtilisateurManager extends BaseManager {
 		EntityManager em = getEntityManager();
 		em.getTransaction().begin();
 		em.merge(utilisateur);
-		em.getTransaction().commit();
-		
+		em.getTransaction().commit();	
 	}
 	public static void purgeTable() {
 		EntityManager em = getEntityManager();

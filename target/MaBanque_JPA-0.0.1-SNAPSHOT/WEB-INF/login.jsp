@@ -8,7 +8,7 @@
 	<div class="container text-center">
 		<fmt:message key="login" />
 		<div>				
-		<form >
+		<form>
 			<button value="fr" onclick="submit()" name="language" class="btn btn-default">fr</button>
 			<button value="en" onclick="submit()" name="language" class="btn btn-default">en</button>
 		</form>

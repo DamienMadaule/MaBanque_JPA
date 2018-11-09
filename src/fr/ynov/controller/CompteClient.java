@@ -30,6 +30,7 @@ public class CompteClient extends HttpServlet {
 		Logger logger = LogManager.getLogger(CompteClient.class);
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/CompteClient.jsp");
 		int idCompte = Integer.parseInt(req.getParameter("id"));
+		req.setAttribute("idCompte", idCompte );
 		Compte cpt = CompteManager.loadCompteByid(idCompte);
 		if(cpt==null) {
 			req.setAttribute("errorMessage", "Aucun utilisateur connu avec ce mot de passe");
